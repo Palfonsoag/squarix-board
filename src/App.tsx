@@ -1,9 +1,8 @@
 import React from "react";
-import Box from "./components/Box/Box";
-import Row from "./components/Row/Row";
+import AppRouter from "./router";
 
 function App() {
-  return <Row length={8} row={0} shape={"SQUARE"} />;
+  return <AppRouter />;
 }
 
 export default App;

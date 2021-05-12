@@ -11,7 +11,7 @@ export interface BoxProps {
 }
 
 const Box = ({ shape, id, col, row }: BoxProps): ReactElement => {
-  return <ShapedBox shape={shape} key={id} id={id} col={col} row={row} />;
+  return <ShapedBox shape={shape} id={id} col={col} row={row} />;
 };
 
 export default Box;

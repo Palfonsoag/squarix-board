@@ -27,9 +27,9 @@ export const ShapedBox = styled.div<BoxProps>`
       : css`
           width: 0;
           height: 0;
-          border-left: 50px solid ${COLORS.transparent};
-          border-right: 50px solid ${COLORS.transparent};
-          border-bottom: 100px solid ${COLORS.black};
+          border-left: 25px solid ${COLORS.transparent};
+          border-right: 25px solid ${COLORS.transparent};
+          border-bottom: 50px solid ${COLORS.black};
           background-color: ${COLORS.transparent};
         `}
 `;

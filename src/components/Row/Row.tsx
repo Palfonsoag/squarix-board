@@ -7,9 +7,10 @@ export interface RowProps {
   length: number;
   row: number;
   shape: Shape;
+  id: string;
 }
 
-const Row = ({ length, row, shape }: RowProps): ReactElement => {
+const Row = ({ length, row, shape, id }: RowProps): ReactElement => {
   const getBoxArray = (): BoxType[] => {
     let boxes: BoxType[] = [];
     let i;
@@ -20,11 +21,16 @@ const Row = ({ length, row, shape }: RowProps): ReactElement => {
   };
   const getRowBoxes = () =>
     getBoxArray().map((box: BoxType) => (
-      <Box id={box.id} col={box.column} row={box.row} shape={shape} />
+      <Box
+        id={box.id}
+        col={box.column}
+        row={box.row}
+        shape={shape}
+        key={box.id}
+      />
     ));
-  console.log(getBoxArray());
 
-  return <Container>{getRowBoxes()}</Container>;
+  return <Container id={id}>{getRowBoxes()}</Container>;
 };
 
 export default Row;

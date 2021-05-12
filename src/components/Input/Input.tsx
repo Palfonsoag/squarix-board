@@ -4,12 +4,13 @@ import { Container, InputComponent, InputContainer, Label } from "./styles";
 export type InputProps = {
   maxLength?: number;
   minLength?: number;
-  value?: string;
+  value?: string | number;
   placeholder?: string;
   label?: string;
   disable?: boolean;
   tag?: string;
   metric?: string;
+  type?: string;
   onClick?: () => void;
   onChangeValue?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
@@ -25,6 +26,7 @@ const Input = ({
   tag = "",
   metric = "",
   disable,
+  type = "text",
   onClick,
   onChangeValue,
   onBlur,
@@ -36,7 +38,7 @@ const Input = ({
       <Container>
         {tag && tag}
         <InputComponent
-          type={"text"}
+          type={type}
           disabled={disable}
           placeholder={placeholder}
           onChange={onChangeValue}
