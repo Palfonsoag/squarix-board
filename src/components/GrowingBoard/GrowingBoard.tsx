@@ -5,26 +5,26 @@ import Row from "../Row/Row";
 import { Container } from "./styles";
 import { TypeOfBoard } from "../../utils/TypeOfBoard.enum";
 
-export interface RegularBoardProps {
-  rows: number;
+export interface GrowingBoardProps {
   columns: number;
   shape: Shape;
+  typeOfBoard?: TypeOfBoard;
 }
 
-const RegularBoard = ({
-  rows,
+const GrowingBoard = ({
   columns,
   shape,
-}: RegularBoardProps): ReactElement => {
+  typeOfBoard = TypeOfBoard.DOUBLE_PYRAMID,
+}: GrowingBoardProps): ReactElement => {
   const getRowArray = (): RowType[] => {
     let numberOfRows: RowType[] = [];
     let i;
+    const rows = typeOfBoard === TypeOfBoard.KNIGHT ? columns : columns * 2 - 1;
     for (i = 0; i < rows; i++) {
       numberOfRows.push({ id: `row${i}`, row: i, rowLength: columns });
     }
     return numberOfRows;
   };
-
   const getBoard = () =>
     getRowArray().map((row: RowType) => (
       <Row
@@ -33,15 +33,15 @@ const RegularBoard = ({
         row={row.row}
         shape={shape}
         key={row.id}
-        typeOfBoard={TypeOfBoard.REGULAR}
+        typeOfBoard={typeOfBoard}
       />
     ));
 
   return (
-    <Container rows={rows} columns={columns} shape={shape}>
+    <Container columns={columns} shape={shape}>
       {getBoard()}
     </Container>
   );
 };
 
-export default RegularBoard;
+export default GrowingBoard;

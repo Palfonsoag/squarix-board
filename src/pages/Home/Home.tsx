@@ -23,7 +23,6 @@ const Home = () => {
     }
   };
   const onChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setBoxShape(event.target.value as Shape);
   };
 
@@ -43,13 +42,13 @@ const Home = () => {
     <Container>
       <ColumnSection>
         <Input
-          label={"Columns"}
+          label={"Columnas"}
           value={numberOfColumns}
           type={"number"}
           onChangeValue={onColumnsChange}
         />
         <Input
-          label={"Rows"}
+          label={"Filas"}
           value={numberOfRows}
           type={"number"}
           onChangeValue={onRowsChange}

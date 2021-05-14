@@ -1,0 +1,9 @@
+export enum TypeOfBoard {
+  ARROW = "ARROW",
+  CUSTOM = "CUSTOM",
+  DOUBLE_PYRAMID = "DOUBLE_PYRAMID",
+  KNIGHT = "KNIGHT",
+  PYRAMID = "PYRAMID",
+  REGULAR = "REGULAR",
+  STAIR = "STAIR",
+}
