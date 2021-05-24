@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../utils/colors";
 
 export const SelectBox = styled.div`
   display: flex;
@@ -6,11 +7,12 @@ export const SelectBox = styled.div`
   justify-content: center;
   width: 250px;
   box-sizing: border-box;
+  background-color: ${COLORS.whiteSmoke};
 `;
 
 export const SelectBoxContainer = styled.div`
   height: 35px;
-  border: 1px solid #aaa;
+  border: 1px solid ${COLORS.black};
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -32,7 +34,7 @@ export const SelectBoxArrow = styled.div`
   height: 35px;
   margin: 0;
   padding: 0;
-  background: #aaaaaa;
+  background-color: ${COLORS.colorSecondary};
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -44,11 +46,14 @@ export const ItemsContainer = styled.div`
   width: 250px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  border-bottom: 1px solid ${COLORS.black};
+  border-left: 1px solid ${COLORS.black};
+  border-right: 1px solid ${COLORS.black};
+  background-color: ${COLORS.whiteSmoke};
   cursor: pointer;
   padding-left: 10px;
+  position: fixed;
+  margin-top: 140px;
 `;
 
 export const ArrowDown = styled.span`
@@ -56,7 +61,7 @@ export const ArrowDown = styled.span`
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 10px solid red;
+  border-top: 10px solid ${COLORS.colorPrimary};
   cursor: pointer;
 `;
 
@@ -65,6 +70,6 @@ export const ArrowUp = styled.span`
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 10px solid red;
+  border-bottom: 10px solid ${COLORS.colorPrimary};
   cursor: pointer;
 `;

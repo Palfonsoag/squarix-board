@@ -29,8 +29,9 @@ const OptionList = ({
   toggleList,
 }: OptionListProps) => {
   const [options, setOptions] = useState<OptionListItems[]>(items || []);
-  const [selectedOption, setSelectedOption] =
-    useState<OptionListItems>(selectedItem);
+  const [selectedOption, setSelectedOption] = useState<OptionListItems>(
+    selectedItem
+  );
 
   useEffect(() => {
     setOptions(items);
@@ -54,16 +55,16 @@ const OptionList = ({
             {showItems ? <ArrowUp /> : <ArrowDown />}
           </SelectBoxArrow>
         </SelectBoxContainer>
+        {showItems && (
+          <ItemsContainer>
+            {options.map((item) => (
+              <div key={item.id} onClick={() => selectItem(item)}>
+                {item.displayValue}
+              </div>
+            ))}
+          </ItemsContainer>
+        )}
       </SelectBox>
-      {showItems && (
-        <ItemsContainer>
-          {options.map((item) => (
-            <div key={item.id} onClick={() => selectItem(item)}>
-              {item.displayValue}
-            </div>
-          ))}
-        </ItemsContainer>
-      )}
     </>
   );
 };
