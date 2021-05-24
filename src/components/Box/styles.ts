@@ -3,7 +3,7 @@ import { COLORS } from "../../utils/colors";
 import { BoxProps } from "./Box";
 import { CIRCLE, SQUARE } from "../../utils/constant";
 
-export const ShapedBox = styled.div<BoxProps>`
+export const ShapedBox = styled.div<Partial<BoxProps>>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,8 @@ export const ShapedBox = styled.div<BoxProps>`
   height: 50px;
   background-color: ${COLORS.whiteSmoke};
   border: 1px solid ${COLORS.black};
-  ${({ shape }: BoxProps) =>
+  cursor: pointer;
+  ${({ shape }: Partial<BoxProps>) =>
     shape === SQUARE
       ? css`
           width: 50px;

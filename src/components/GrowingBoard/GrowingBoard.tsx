@@ -4,16 +4,19 @@ import { RowType } from "../../utils/Row.dt";
 import Row from "../Row/Row";
 import { Container } from "./styles";
 import { TypeOfBoard } from "../../utils/TypeOfBoard.enum";
+import { OptionListItems } from "../OptionList/OptionList";
 
 export interface GrowingBoardProps {
   columns: number;
   shape: Shape;
   typeOfBoard?: TypeOfBoard;
+  options: OptionListItems[];
 }
 
 const GrowingBoard = ({
   columns,
   shape,
+  options,
   typeOfBoard = TypeOfBoard.DOUBLE_PYRAMID,
 }: GrowingBoardProps): ReactElement => {
   const getRowArray = (): RowType[] => {
@@ -34,6 +37,7 @@ const GrowingBoard = ({
         shape={shape}
         key={row.id}
         typeOfBoard={typeOfBoard}
+        options={options}
       />
     ));
 

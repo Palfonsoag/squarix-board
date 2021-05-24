@@ -4,17 +4,20 @@ import { RowType } from "../../utils/Row.dt";
 import Row from "../Row/Row";
 import { Container } from "./styles";
 import { TypeOfBoard } from "../../utils/TypeOfBoard.enum";
+import { OptionListItems } from "../OptionList/OptionList";
 
 export interface RegularBoardProps {
   rows: number;
   columns: number;
   shape: Shape;
+  options: OptionListItems[];
 }
 
 const RegularBoard = ({
   rows,
   columns,
   shape,
+  options,
 }: RegularBoardProps): ReactElement => {
   const getRowArray = (): RowType[] => {
     let numberOfRows: RowType[] = [];
@@ -34,6 +37,7 @@ const RegularBoard = ({
         shape={shape}
         key={row.id}
         typeOfBoard={TypeOfBoard.REGULAR}
+        options={options}
       />
     ));
 

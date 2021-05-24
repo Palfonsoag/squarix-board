@@ -19,3 +19,47 @@ export const ColumnSection = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const RedSquare = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border: 1px solid ${COLORS.black};
+`;
+
+export const BlueSquare = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  border: 1px solid ${COLORS.black};
+`;
+
+export const YellowSquare = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  border: 1px solid ${COLORS.black};
+`;
+
+export const GreenSquare = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border: 1px solid ${COLORS.black};
+`;

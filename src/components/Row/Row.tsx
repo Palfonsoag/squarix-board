@@ -9,6 +9,7 @@ import {
   getStairPyramidBoxArray,
   getKnightBoxArray,
 } from "./Row.utils";
+import { OptionListItems } from "../OptionList/OptionList";
 
 export interface RowProps {
   maxColumLength: number;
@@ -16,6 +17,7 @@ export interface RowProps {
   shape: Shape;
   id: string;
   typeOfBoard?: TypeOfBoard;
+  options: OptionListItems[];
 }
 
 const Row = ({
@@ -23,6 +25,7 @@ const Row = ({
   row,
   shape,
   id,
+  options,
   typeOfBoard = TypeOfBoard.REGULAR,
 }: RowProps): ReactElement => {
   const getRowBoxes = () => {
@@ -50,6 +53,7 @@ const Row = ({
   const getRegularRowBoxes = () =>
     getRegularBoxArray(maxColumLength, row).map((box: BoxType) => (
       <Box
+        options={options}
         id={box.id}
         col={box.column}
         row={box.row}
@@ -60,6 +64,7 @@ const Row = ({
   const getDoublePyramidArrowRowBoxes = () =>
     getDoublePyramidArrowBoxArray(maxColumLength, row).map((box: BoxType) => (
       <Box
+        options={options}
         id={box.id}
         col={box.column}
         row={box.row}
@@ -71,6 +76,7 @@ const Row = ({
   const getPyramidStairsRowBoxes = () =>
     getStairPyramidBoxArray(maxColumLength, row).map((box: BoxType) => (
       <Box
+        options={options}
         id={box.id}
         col={box.column}
         row={box.row}
@@ -81,6 +87,7 @@ const Row = ({
   const getKnightRowBoxes = () =>
     getKnightBoxArray(maxColumLength, row).map((box: BoxType) => (
       <Box
+        options={options}
         id={box.id}
         col={box.column}
         row={box.row}

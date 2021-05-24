@@ -5,8 +5,10 @@ export const SelectBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 250px;
+  min-width: 70px;
   box-sizing: border-box;
+  position: fixed;
+  margin-right: -50px;
   background-color: ${COLORS.whiteSmoke};
 `;
 
@@ -43,7 +45,7 @@ export const SelectBoxArrow = styled.div`
 `;
 
 export const ItemsContainer = styled.div`
-  width: 250px;
+  mint-width: 70px;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid ${COLORS.black};
@@ -72,4 +74,19 @@ export const ArrowUp = styled.span`
   border-right: 8px solid transparent;
   border-bottom: 10px solid ${COLORS.colorPrimary};
   cursor: pointer;
+`;
+
+export const BoxOptionContainer = styled.div`
+  min-width: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid ${COLORS.black};
+  background-color: ${COLORS.whiteSmoke};
+  cursor: pointer;
+  position: fixed;
+  elevation: 1000;
+  margin-left: 60px;
+  -webkit-box-shadow: -3px 1px 37px -6px rgba(0, 0, 0, 0.84);
+  box-shadow: -3px 1px 37px -6px rgba(0, 0, 0, 0.84);
 `;
